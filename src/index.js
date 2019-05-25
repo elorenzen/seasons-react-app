@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SeasonDisplay from './SeasonDisplay';
 
 
 // App class component is 'extended' using React.Component to access its built-in methods
@@ -34,7 +35,7 @@ class App extends React.Component {
         }
         // Displays latitude
         if(!this.state.errorMessage && this.state.lat) {
-            return <div>Latitude: {this.state.lat}</div>;
+            return <SeasonDisplay lat={this.state.lat} />
         }
         // Displays problem loading
         return <div>Loading</div>

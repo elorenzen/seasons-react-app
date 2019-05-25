@@ -39,7 +39,7 @@ class App extends React.Component {
             return <SeasonDisplay lat={this.state.lat} />
         }
         // Displays problem loading
-        return <Spinner />
+        return <Spinner message='Accepting location preferences...' />
     };
 }
 

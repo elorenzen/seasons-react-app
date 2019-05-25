@@ -11,16 +11,19 @@ class App extends React.Component {
 
         // Set state for new object with empty, unknown value
         this.state = {lat: null};
+
+        // Use Geolocation API to determine user's current location
+        window.navigator.geolocation.getCurrentPosition(
+            (position) => {
+                // setState() takes this.state and assigns it value of latitude
+                this.setState({ lat: position.coords.latitude });
+            },
+            (err) => console.log(err)
+        );
     }
 
     // Render required for every React component
     render() {
-        // Use Geolocation API to determine user's current location
-        window.navigator.geolocation.getCurrentPosition(
-            (position) => console.log(position),
-            (err) => console.log(err)
-        );
-
         return (
             <div>Latitude: {this.state.lat} </div>
         )

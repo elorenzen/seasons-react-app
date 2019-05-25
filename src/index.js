@@ -11,7 +11,10 @@ class App extends React.Component {
 
         // Set state for new object with empty, unknown value
         this.state = {lat: null, errorMessage: ''};
+    }
 
+    // === Lifecycle Methods ===
+    componentDidMount() {
         // Use Geolocation API to determine user's current location
         window.navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -22,6 +25,12 @@ class App extends React.Component {
                 this.setState({errorMessage: err.message });
             }
         );
+
+        console.log("Component successfully rendered to screen");
+    }
+
+    componentDidUpdate() {
+        console.log("Component updated successfully");
     }
 
     // Render required for every React component

@@ -10,10 +10,16 @@ const getSeason = (lat, month) => {
 
 const SeasonDisplay = (props) => {
     const season = getSeason(props.lat, new Date().getMonth());
+    const text = season === 'summer' ? "Let's hit the beach" : "Brrr, it's chilly";
+    const icon = season === 'summer' ? "sun" : "snowflake"
 
     return (
         <div>
-            {season === 'summer' ? "Let's hit the beach" : "Brrr, it's chilly"}
+            <h1>
+                <i className={`${icon} outline icon`}></i>
+                {text}
+                <i className={`${icon} outline icon`}></i>
+            </h1>
         </div>
     )
 };

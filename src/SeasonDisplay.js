@@ -25,11 +25,9 @@ const SeasonDisplay = (props) => {
 
     return (
         <div>
-            <h1>
-                <i className={`${iconName} outline icon`}></i>
-                {text}
-                <i className={`${iconName} outline icon`}></i>
-            </h1>
+            <i className={`massive ${iconName} outline icon`}></i>
+            <h1>{text}</h1>
+            <i className={`massive ${iconName} outline icon`}></i>
         </div>
     )
 };

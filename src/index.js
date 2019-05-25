@@ -8,6 +8,9 @@ class App extends React.Component {
     constructor(props) {
         // Allows use of React.Component methods after new constructor function overrides original React.Component
         super(props);
+
+        // Set state for new object with empty, unknown value
+        this.state = {lat: null};
     }
 
     // Render required for every React component
@@ -19,7 +22,7 @@ class App extends React.Component {
         );
 
         return (
-            <div>Latitude: </div>
+            <div>Latitude: {this.state.lat} </div>
         )
     };
 }

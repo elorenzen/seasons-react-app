@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 
 // App class component is 'extended' using React.Component to access its built-in methods
@@ -38,7 +39,7 @@ class App extends React.Component {
             return <SeasonDisplay lat={this.state.lat} />
         }
         // Displays problem loading
-        return <div>Loading</div>
+        return <Spinner />
     };
 }
 

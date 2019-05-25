@@ -28,8 +28,8 @@ class App extends React.Component {
         console.log("Component updated successfully");
     }
 
-    // Render required for every React component
-    render() {
+    // Helper function
+    renderContent() {
         //Displays error message when
         if(this.state.errorMessage && !this.state.lat) {
             return <div>Error: {this.state.errorMessage}</div>
@@ -40,6 +40,15 @@ class App extends React.Component {
         }
         // Displays problem loading
         return <Spinner message='Accepting location preferences...' />
+    };
+
+    // Render required for every React component
+    render() {
+        return (
+            <div style={{border: '10px solid red'}}>
+                {this.renderContent()}
+            </div>
+        )
     };
 }
 
